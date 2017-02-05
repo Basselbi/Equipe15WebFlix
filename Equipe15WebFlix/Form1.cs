@@ -20,6 +20,8 @@ namespace Equipe15WebFlix
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+
          Dialect dialect = Dialect.GetDialect();
 //            //<-- compare against the expected dailect classes
 //            if (dialect instanceof OracleDialect){
