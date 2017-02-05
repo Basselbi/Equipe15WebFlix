@@ -22,7 +22,6 @@ namespace Equipe15WebFlix
         {
 
 
-         Dialect dialect = Dialect.GetDialect();
 //            //<-- compare against the expected dailect classes
 //            if (dialect instanceof OracleDialect){
 //                //your database is oracle

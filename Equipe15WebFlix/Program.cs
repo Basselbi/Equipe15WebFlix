@@ -19,21 +19,22 @@ namespace Equipe15WebFlix
         static void Main()
         {
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Equipe15WebFlix.Properties.Settings.ConnectionString"].ToString();
-
+            
            
             NHibernate.Cfg.Configuration nHibernateConfiguration =
                                                   new NHibernate.Cfg.Configuration();
-//            nHibernateConfiguration.SetProperty(
-//              NHibernate.Cfg.Environment.ProxyFactoryFactoryClass,
-//              typeof(NHibernate.Castle.ProxyFactoryFactory).AssemblyQualifiedName);
-//            nHibernateConfiguration.SetProperty(
-//              NHibernate.Cfg.Environment.Dialect,
-//              typeof(NHibernate.Dialect.MsSql2005Dialect).AssemblyQualifiedName);
-//            nHibernateConfiguration.SetProperty(
-//              NHibernate.Cfg.Environment.ConnectionString, connectionString);
-//            nHibernateConfiguration.SetProperty(
-//              NHibernate.Cfg.Environment.FormatSql, "true");
-//            nHibernateConfiguration.AddAssembly(Assembly.GetCallingAssembly());
+            var configuration = nHibernateConfiguration;
+                    nHibernateConfiguration.SetProperty(
+                        NHibernate.Cfg.Environment.ProxyFactoryFactoryClass,
+                     typeof(NHibernate.ByteCode.Castle.ProxyFactoryFactory).AssemblyQualifiedName);
+                  nHibernateConfiguration.SetProperty(
+                        NHibernate.Cfg.Environment.Dialect,
+                      typeof(NHibernate.Dialect.Oracle12cDialect).AssemblyQualifiedName);
+                     nHibernateConfiguration.SetProperty(
+                       NHibernate.Cfg.Environment.ConnectionString, connectionString);
+                      nHibernateConfiguration.SetProperty(
+                        NHibernate.Cfg.Environment.FormatSql, "true");
+                      nHibernateConfiguration.AddAssembly(Assembly.GetCallingAssembly());
 
             ISessionFactory oneISessionFactory = nHibernateConfiguration
                                                     .BuildSessionFactory();
