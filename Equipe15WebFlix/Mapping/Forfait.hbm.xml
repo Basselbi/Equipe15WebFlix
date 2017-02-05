@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Forfait" table="FORFAIT" lazy="true" >
+    <id name="Forfaitid" column="FORFAITID" />
+    <property name="Nomforfait">
+      <column name="NOMFORFAIT" sql-type="VARCHAR2" not-null="true" unique="true" />
+    </property>
+    <property name="Cout">
+      <column name="COUT" sql-type="NUMBER" not-null="false" />
+    </property>
+    <property name="Locationmax">
+      <column name="LOCATIONMAX" sql-type="NUMBER" not-null="true" />
+    </property>
+    <property name="Dureemax">
+      <column name="DUREEMAX" sql-type="NUMBER" not-null="false" />
+    </property>
+    <bag name="Client" inverse="true">
+      <key column="FORFAITID" />
+      <one-to-many class="Client" />
+    </bag>
+  </class>
+</hibernate-mapping>

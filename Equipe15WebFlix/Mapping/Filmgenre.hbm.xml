@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Filmgenre" table="FILMGENRE" lazy="true" >
+    <composite-id>
+      <key-many-to-one name="Genre" column="GENREID" />
+      <key-many-to-one name="Film" column="FILMID" />
+    </composite-id>
+  </class>
+</hibernate-mapping>

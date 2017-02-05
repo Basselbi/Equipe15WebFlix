@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Genre" table="GENRE" lazy="true" >
+    <id name="Genreid" column="GENREID" />
+    <property name="Nomgenre">
+      <column name="NOMGENRE" sql-type="VARCHAR2" not-null="true" />
+    </property>
+    <bag name="Filmgenre" inverse="true">
+      <key column="GENREID" />
+      <one-to-many class="Filmgenre" />
+    </bag>
+  </class>
+</hibernate-mapping>

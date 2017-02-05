@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Role" table="ROLE" lazy="true" >
+    <composite-id>
+      <key-many-to-one name="Film" column="FILMID" />
+      <key-many-to-one name="Informationpersonnel" column="PERSONELID" />
+    </composite-id>
+    <property name="Nompersonnage">
+      <column name="NOMPERSONNAGE" sql-type="VARCHAR2" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

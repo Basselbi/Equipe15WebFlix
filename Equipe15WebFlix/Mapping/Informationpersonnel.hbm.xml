@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Informationpersonnel" table="INFORMATIONPERSONNEL" lazy="true" >
+    <id name="Personelid" column="PERSONELID" />
+    <property name="Nom">
+      <column name="NOM" sql-type="VARCHAR2" not-null="false" />
+    </property>
+    <property name="Datenaissance">
+      <column name="DATENAISSANCE" sql-type="DATE" not-null="false" />
+    </property>
+    <property name="Lieunaissance">
+      <column name="LIEUNAISSANCE" sql-type="VARCHAR2" not-null="false" />
+    </property>
+    <property name="Biographie">
+      <column name="BIOGRAPHIE" sql-type="CLOB" not-null="false" />
+    </property>
+    <property name="Photo">
+      <column name="PHOTO" sql-type="VARCHAR2" not-null="false" />
+    </property>
+    <bag name="Film" inverse="true">
+      <key column="REALISATEURID" />
+      <one-to-many class="Film" />
+    </bag>
+    <bag name="Role" inverse="true">
+      <key column="PERSONELID" />
+      <one-to-many class="Role" />
+    </bag>
+  </class>
+</hibernate-mapping>

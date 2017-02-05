@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Users" table="USERS" lazy="true" >
+    <id name="Userid" column="USERID" />
+    <property name="Nom">
+      <column name="NOM" sql-type="VARCHAR2" not-null="true" />
+    </property>
+    <property name="Prenom">
+      <column name="PRENOM" sql-type="VARCHAR2" not-null="true" />
+    </property>
+    <property name="Courriel">
+      <column name="COURRIEL" sql-type="VARCHAR2" not-null="false" unique="true" />
+    </property>
+    <property name="Adresse">
+      <column name="ADRESSE" sql-type="VARCHAR2" not-null="true" />
+    </property>
+    <property name="Ville">
+      <column name="VILLE" sql-type="VARCHAR2" not-null="true" />
+    </property>
+    <property name="Province">
+      <column name="PROVINCE" sql-type="VARCHAR2" not-null="true" />
+    </property>
+    <property name="Codepostal">
+      <column name="CODEPOSTAL" sql-type="CHAR" not-null="true" />
+    </property>
+    <property name="Notelephone">
+      <column name="NOTELEPHONE" sql-type="CHAR" not-null="true" />
+    </property>
+    <property name="Datenaissance">
+      <column name="DATENAISSANCE" sql-type="DATE" not-null="true" />
+    </property>
+    <property name="Motdepass">
+      <column name="MOTDEPASS" sql-type="VARCHAR2" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

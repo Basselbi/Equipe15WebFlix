@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Film" table="FILM" lazy="true" >
+    <id name="Filmid" column="FILMID" />
+    <many-to-one name="Informationpersonnel">
+      <column name="REALISATEURID" sql-type="NUMBER" not-null="false" />
+    </many-to-one>
+    <property name="Titre">
+      <column name="TITRE" sql-type="VARCHAR2" not-null="false" />
+    </property>
+    <property name="Annesortie">
+      <column name="ANNESORTIE" sql-type="NUMBER" not-null="false" />
+    </property>
+    <property name="Langue">
+      <column name="LANGUE" sql-type="VARCHAR2" not-null="false" />
+    </property>
+    <property name="Duree">
+      <column name="DUREE" sql-type="NUMBER" not-null="false" />
+    </property>
+    <property name="Resume">
+      <column name="RESUME" sql-type="CLOB" not-null="false" />
+    </property>
+    <property name="Poster">
+      <column name="POSTER" sql-type="VARCHAR2" not-null="false" />
+    </property>
+    <property name="Qtytotal">
+      <column name="QTYTOTAL" sql-type="NUMBER" not-null="false" />
+    </property>
+    <property name="Qtydisponible">
+      <column name="QTYDISPONIBLE" sql-type="NUMBER" not-null="false" />
+    </property>
+    <bag name="Filmgenre" inverse="true">
+      <key column="FILMID" />
+      <one-to-many class="Filmgenre" />
+    </bag>
+    <bag name="Scenaristefilm" inverse="true">
+      <key column="FILMID" />
+      <one-to-many class="Scenaristefilm" />
+    </bag>
+    <bag name="Location" inverse="true">
+      <key column="FILMID" />
+      <one-to-many class="Location" />
+    </bag>
+    <bag name="Role" inverse="true">
+      <key column="FILMID" />
+      <one-to-many class="Role" />
+    </bag>
+    <bag name="Filmpays" inverse="true">
+      <key column="FILMID" />
+      <one-to-many class="Filmpays" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Cartecredit" table="CARTECREDIT" lazy="true" >
+    <id name="Carteid" column="CARTEID" />
+    <many-to-one name="Client">
+      <column name="USERID" sql-type="NUMBER" not-null="false" />
+    </many-to-one>
+    <property name="Typecarte">
+      <column name="TYPECARTE" sql-type="NUMBER" not-null="true" />
+    </property>
+    <property name="Numero">
+      <column name="NUMERO" sql-type="VARCHAR2" not-null="true" />
+    </property>
+    <property name="Mois">
+      <column name="MOIS" sql-type="NUMBER" not-null="true" />
+    </property>
+    <property name="Annee">
+      <column name="ANNEE" sql-type="NUMBER" not-null="true" />
+    </property>
+    <property name="Ccv">
+      <column name="CCV" sql-type="NUMBER" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

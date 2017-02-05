@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Employe" table="EMPLOYE" lazy="true" >
+    <id name="Userid" column="USERID" />
+    <property name="Matricule">
+      <column name="MATRICULE" sql-type="VARCHAR2" not-null="true" unique="true" />
+    </property>
+  </class>
+</hibernate-mapping>

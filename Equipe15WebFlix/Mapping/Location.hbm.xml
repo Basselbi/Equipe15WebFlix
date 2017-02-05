@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Location" table="LOCATION" lazy="true" >
+    <id name="Locationid" column="LOCATIONID" />
+    <many-to-one name="Film">
+      <column name="FILMID" sql-type="NUMBER" not-null="false" />
+    </many-to-one>
+    <many-to-one name="Client">
+      <column name="USERID" sql-type="NUMBER" not-null="false" />
+    </many-to-one>
+    <property name="Datedebut">
+      <column name="DATEDEBUT" sql-type="DATE" not-null="true" />
+    </property>
+    <property name="Dateretour">
+      <column name="DATERETOUR" sql-type="DATE" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

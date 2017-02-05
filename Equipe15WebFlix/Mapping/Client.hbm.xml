@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Equipe15WebFlix" namespace="Equipe15WebFlix.domain" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Client" table="CLIENT" lazy="true" >
+    <id name="Userid" column="USERID" />
+    <many-to-one name="Forfait">
+      <column name="FORFAITID" sql-type="NUMBER" not-null="false" />
+    </many-to-one>
+    <bag name="Cartecredit" inverse="true">
+      <key column="USERID" />
+      <one-to-many class="Cartecredit" />
+    </bag>
+    <bag name="Location" inverse="true">
+      <key column="USERID" />
+      <one-to-many class="Location" />
+    </bag>
+  </class>
+</hibernate-mapping>
